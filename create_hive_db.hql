@@ -59,8 +59,8 @@ CREATE TABLE basics_tmp
     primaryTitle VARCHAR(100),
     originalTitle VARCHAR(100),
     isAdult BOOLEAN,
-    startYear CHAR(4),
-    endYear CHAR(4),
+    startYear SMALLINT,
+    endYear SMALLINT,
     runtimeMinutes SMALLINT,
     genres array<string>
 
@@ -80,8 +80,8 @@ CREATE TABLE basics
     primaryTitle VARCHAR(100),
     originalTitle VARCHAR(100),
     isAdult BOOLEAN,
-    startYear CHAR(4),
-    endYear CHAR(4),
+    startYear SMALLINT,
+    endYear SMALLINT,
     runtimeMinutes SMALLINT,
     genres array<string>
 
@@ -245,8 +245,8 @@ CREATE TABLE name_basics_tmp
 (
     nconst VARCHAR(64),
     primaryName VARCHAR(64),
-    birthYear CHAR(4),
-    deathYear CHAR(4),
+    birthYear SMALLINT,
+    deathYear SMALLINT,
     primaryProfession array<string>,
     knownForTitles array<CHAR(9)>
 )
@@ -263,12 +263,12 @@ CREATE TABLE name_basics
 (
     nconst VARCHAR(64),
     primaryName VARCHAR(64),
-    deathYear CHAR(4),
+    deathYear SMALLINT,
     primaryProfession array<string>,
     knownForTitles array<CHAR(9)>
 )
 
-PARTITIONED BY (birthYear CHAR(4))
+PARTITIONED BY (birthYear SMALLINT)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY "\t"
 LINES TERMINATED BY "\n"
